@@ -1,0 +1,52 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body{
+    background-color: rgb(97, 97, 241);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    width: 500px;
+
+}
+.t1{
+    display: flex;
+    gap: 40px;
+
+}
+.c1{
+    /* flex: ; */
+    
+}
+.line{
+    margin: 20px 0px;
+    padding: 0px 5px;
+}
+input{
+    padding: 10px;
+    width: 100%;
+}
+select{
+    padding: 10px;
+}
+.submit{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+h1{
+    text-align: center;
+}
