@@ -35,24 +35,45 @@
         padding:10px;
         margin-bottom:30px;
     }
-    .box{
-        height:10px;
-        width: 10px;
-        border:1px solid blue;
+   .boxcontainer input{
+    /* margin:0;
+    padding:0; */
+   }
+    .boxcontainer{
         display:flex;
+        width:0px;
+        padding:0px;
+        margin-bottom:30px;
     }
+
 </style>
 <body>
-    <form action="./loginpage.php" method="post"></form>
-    <div class="container">
-        <h1>Login Form</h1>
-        <input type="email" name="email" id="" placeholder="Enter Your Email" ><br>
-        <input type="text" name="password" id="" placeholder="Enter your password"><br>
-        <div class="box">
-            <p>Remember Me</p>
-        </div>  
-        <button>Login</button>
-    </div>
+    <?php
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            $email=$_POST["email"];
+
+            if(isset($_COOKIE["emailaddress"])){
+                header("Location:dashboard.php");
+                return;
+            }
+            
+                setcookie("emailaddress",$email,time()+86400);
+            
+        }
+
+    ?>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+
+        <div class="container">
+            <h1>Login Form</h1>
+            <input type="email" name="email" id="" placeholder="Enter Your Email" ><br>
+            <div class="boxcontainer">
+                
+                <input type="checkbox" name="remember">Remember Me
+            </div>
+            <button>Login</button>
+        </div>
+    </form>
 
 </body>
 </html>
